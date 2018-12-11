@@ -26,17 +26,17 @@ async function init({
     init_cassandra_driver,
     init_cassandra_migration
 } = {}) {
-    const options = {queries, scassanadra_address, cassandra_keyspace, init_cassandra_driver, init_cassandra_migration};
+    const options = { queries, scassanadra_address, cassandra_keyspace, init_cassandra_driver, init_cassandra_migration };
     validateParams(options);
     config.init(options);
     client.init(options);
 }
 
 async function primeAll() {
-    const {init_cassandra_driver, init_cassandra_migration} = config;
+    const { init_cassandra_driver, init_cassandra_migration } = config;
     await resetAll();
     await Promise.all([
-        commonQueries.init({init_cassandra_driver, init_cassandra_migration}),
+        commonQueries.init({ init_cassandra_driver, init_cassandra_migration }),
         prepareAllQueries(config.queries)
 
     ]);
@@ -51,10 +51,10 @@ function validateParams({
 }) {
     const queriesNotValid = _.some(queries, query => {
         return !(query instanceof PreparedSingle) &&
-                !(query instanceof QuerySingle);
+            !(query instanceof QuerySingle);
     });
     if (queriesNotValid) {
-        throw new Error('`queries` must be an instance Object of QuerySingle/PreparedSingle instances');
+        throw new Error('`queries` must be an Object of key-value, while value is QuerySingle/PreparedSingle');
     }
     if (!scassanadra_address) {
         throw new Error('scassanadra_address is mandatory');

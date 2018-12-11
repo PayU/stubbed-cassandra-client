@@ -5,7 +5,7 @@ module.exports.init = ({
     init_cassandra_driver,
     init_cassandra_migration
 }) => {
-    Object.assign(module.exports, {queries, scassanadra_address, cassandra_keyspace, init_cassandra_driver, init_cassandra_migration});
+    Object.assign(module.exports, { queries, scassanadra_address, cassandra_keyspace, init_cassandra_driver, init_cassandra_migration });
 };
 
 module.exports.scassanadra_address = undefined;

@@ -1,8 +1,8 @@
 const QuerySingle = require('./QuerySingle');
 const common = require('./common');
-const {cassandra_keyspace} = require('./config');
+const { cassandra_keyspace } = require('./config');
 
-module.exports.init = async ({init_cassandra_driver, init_cassandra_migration} = {}) => {
+module.exports.init = async ({ init_cassandra_driver, init_cassandra_migration } = {}) => {
     let p1, p2, p3, p4, p5, p6;
 
     // Cassandra Driver related queries
@@ -10,7 +10,7 @@ module.exports.init = async ({init_cassandra_driver, init_cassandra_migration} =
         p1 = new QuerySingle({
             query: "SELECT * FROM system.local WHERE key='local'",
             variable_types: ['uuid', 'varchar', 'set<uuid>', 'set<uuid>', 'uuid', 'varchar', 'uuid', 'timestamp'],
-            column_types: {tokens: 'set<text>'},
+            column_types: { tokens: 'set<text>' },
             rows: [
                 {
                     'cluster_name': 'custom cluster name',
