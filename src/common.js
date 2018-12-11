@@ -22,7 +22,15 @@ module.exports.cassandra_version = '3.0.10';
 module.exports.results = RESULTS;
 module.exports.errors_array = Object.keys(RESULTS);
 module.exports.consistency = {
-    quorum: 'QUORUM',
+    any: 'ANY',
     one: 'ONE',
-    two: 'TWO'
+    two: 'TWO',
+    three: 'THREE',
+    quorum: 'QUORUM',
+    all: 'ALL',
+    localQuorum: 'LOCAL_QUORUM',
+    eachQuorum: 'EACH_QUORUM',
+    serial: 'SERIAL',
+    localSerial: 'LOCAL_SERIAL',
+    localOne: 'LOCAL_ONE'
 };
