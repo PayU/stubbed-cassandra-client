@@ -5,7 +5,7 @@ let preparedStatementExecution;
 let primePreparedStatement;
 let primeQueryStatement;
 
-module.exports.init = ({scassanadra_address}) => {
+module.exports.init = ({ scassanadra_address }) => {
     preparedStatementExecution = rp.defaults({
         baseUrl: `http://${scassanadra_address}`,
         uri: '/prepared-statement-execution',
@@ -23,7 +23,7 @@ module.exports.init = ({scassanadra_address}) => {
     });
 };
 
-module.exports.primeQuerySingle = async ({query, consistency, variable_types, rows, result, column_types}) => {
+module.exports.primeQuerySingle = async ({ query, consistency, variable_types, rows, result, column_types }) => {
     await primeQueryStatement.post({
         body: {
             when: { query, consistency },
@@ -31,7 +31,7 @@ module.exports.primeQuerySingle = async ({query, consistency, variable_types, ro
         }
     });
 };
-module.exports.primePreparedSingle = async ({query, consistency, variable_types, rows, result, column_types}) => {
+module.exports.primePreparedSingle = async ({ query, consistency, variable_types, rows, result, column_types }) => {
     await primePreparedStatement.post({
         body: {
             when: { query, consistency },
@@ -40,7 +40,7 @@ module.exports.primePreparedSingle = async ({query, consistency, variable_types,
     });
 };
 
-module.exports.getPreparedStatementExecution = async ({query, consistency, variables, variableTypes} = {}) => {
+module.exports.getPreparedStatementExecution = async ({ query, consistency, variables, variableTypes } = {}) => {
     const response = await preparedStatementExecution.get();
 
     const predicate = _.pickBy({

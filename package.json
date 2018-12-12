@@ -21,12 +21,7 @@
     "cache": true,
     "all": true
   },
-  "scripts": {
-    "debug": "node src/app.js",
-    "test": "./node_modules/.bin/_mocha ./test/unit-tests --recursive",
-    "test-coverage": "./node_modules/.bin/nyc npm test",
-    "lint": "node_modules/eslint/bin/eslint.js src/** index.js"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/kobik/stubbed-cassandra-client.git"
