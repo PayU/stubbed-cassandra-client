@@ -1,3 +1,4 @@
+const { results } = require('./common');
 const client = require('./client');
 
 module.exports = class PreparedSingle {
@@ -8,7 +9,7 @@ module.exports = class PreparedSingle {
         this.consistency = consistency;
         this.variables = variables;
         this.rows = rows || [];
-        this.result = result || 'success';
+        this.result = result || results.success;
     }
 
     async prime({ rows = this.rows, result = this.result } = {}) {
