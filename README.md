@@ -1,5 +1,7 @@
 # stubbed-cassandra-client
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/kobik/stubbed-cassandra-client.svg)](https://greenkeeper.io/)
+
 A javascript client for Stubbed Cassandra.
 
 Priming and querying stand-alone Stubbed Cassandra could be a painful task. The aim of of this stubbed-cassandra-client is to ease this pain by providing an simple API, that developers can easily use.
