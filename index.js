@@ -19,7 +19,7 @@ module.exports = {
     PreparedSingle
 };
 
-async function init({
+function init({
     queries,
     scassanadra_address,
     cassandra_keyspace,
