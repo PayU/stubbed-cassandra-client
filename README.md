@@ -37,7 +37,7 @@ const queries = require('./queries');
 
 describe('Integration tests', function () {
     before(async function () {
-        await stubbedClient.init({
+        stubbedClient.init({
             scassanadra_address: process.env.CASSANDRA_MOCK_ADDRESS,
             cassandra_keyspace: process.env.CASSANDRA_KEYSPACE,
             queries
